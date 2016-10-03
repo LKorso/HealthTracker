@@ -44,4 +44,8 @@ public class HealthTracker {
     public void walkInSteps(int givenSteps) {
         steps -= givenSteps;
     }
+
+    public void walkInTime(int givenMinutes) {
+        walkingTime -= givenMinutes;
+    }
 }

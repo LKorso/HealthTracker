@@ -31,5 +31,9 @@ public class TrackerTest {
         assertEquals(1800, instance.leftToWalkSteps());
     }
 
-    
+    @Test
+    public void timeTest() throws Exception {
+        instance.walkInTime(300);
+        assertEquals(1700, instance.leftToWalkTime());
+    }
 }
