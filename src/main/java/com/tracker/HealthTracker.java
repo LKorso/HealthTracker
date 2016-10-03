@@ -36,4 +36,12 @@ public class HealthTracker {
     public void eat(int givenCalories){
         calories -= givenCalories;
     }
+
+    public void drink(int givenVolume) {
+        waterVolume -= givenVolume;
+    }
+
+    public void walkInSteps(int givenSteps) {
+        steps -= givenSteps;
+    }
 }
