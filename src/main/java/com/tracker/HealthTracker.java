@@ -48,4 +48,8 @@ public class HealthTracker {
     public void walkInTime(int givenMinutes) {
         walkingTime -= givenMinutes;
     }
+
+    public void changeDailyCalorieNorm(int newCalorieNorm) {
+        calories = newCalorieNorm;
+    }
 }

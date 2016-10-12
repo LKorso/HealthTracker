@@ -36,4 +36,10 @@ public class TrackerTest {
         instance.walkInTime(300);
         assertEquals(1700, instance.leftToWalkTime());
     }
+
+    @Test
+    public void changeCaloriesTest() throws Exception {
+        instance.changeDailyCalorieNorm(1000);
+        assertEquals(1000, instance.leftToEat());
+    }
 }
