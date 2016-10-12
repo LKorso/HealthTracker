@@ -49,5 +49,11 @@ public class TrackerTest {
         assertEquals(1000, instance.leftToDrink());
     }
 
+    @Test
+    public void changeStepsNormTest() throws Exception {
+        instance.changeDailyStepsNorm(1000);
+        assertEquals(1000, instance.leftToWalkSteps());
+    }
+
     
 }

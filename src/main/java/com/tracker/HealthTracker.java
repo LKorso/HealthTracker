@@ -56,4 +56,8 @@ public class HealthTracker {
     public void changeDailyWaterNorm(int newWaterNorm) {
         waterVolume = newWaterNorm;
     }
+
+    public void changeDailyStepsNorm(int newStepsNorm) {
+        steps = newStepsNorm;
+    }
 }
