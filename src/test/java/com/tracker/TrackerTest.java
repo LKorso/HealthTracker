@@ -55,5 +55,9 @@ public class TrackerTest {
         assertEquals(1000, instance.leftToWalkSteps());
     }
 
-    
+    @Test
+    public void changeMinutesNormTest() throws Exception {
+        instance.changeDailyMinutesNorm(1000);
+        assertEquals(1000, instance.leftToWalkTime());
+    }
 }

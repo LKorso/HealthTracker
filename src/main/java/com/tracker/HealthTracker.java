@@ -60,4 +60,8 @@ public class HealthTracker {
     public void changeDailyStepsNorm(int newStepsNorm) {
         steps = newStepsNorm;
     }
+
+    public void changeDailyMinutesNorm(int newMinutesNorm) {
+        walkingTime = newMinutesNorm;
+    }
 }
