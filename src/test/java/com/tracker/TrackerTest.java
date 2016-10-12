@@ -42,4 +42,12 @@ public class TrackerTest {
         instance.changeDailyCalorieNorm(1000);
         assertEquals(1000, instance.leftToEat());
     }
+
+    @Test
+    public void changeWaterNormTest() throws Exception {
+        instance.changeDailyWaterNorm(1000);
+        assertEquals(1000, instance.leftToDrink());
+    }
+
+    
 }

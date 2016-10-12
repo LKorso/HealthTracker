@@ -52,4 +52,8 @@ public class HealthTracker {
     public void changeDailyCalorieNorm(int newCalorieNorm) {
         calories = newCalorieNorm;
     }
+
+    public void changeDailyWaterNorm(int newWaterNorm) {
+        waterVolume = newWaterNorm;
+    }
 }
