@@ -1,8 +1,6 @@
 package com.tracker;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class HealthHistory {
     private Map<Date, Integer> caloriesHistory = new HashMap<Date, Integer>();
@@ -38,8 +36,24 @@ public class HealthHistory {
         return countValuesDuringTerm(startDate, endDate, waterVolumeHistory);
     }
 
-    public int countWalkintTimeDuringTerm(Date startDate, Date endDate){
+    public int countWalkingTimeDuringTerm(Date startDate, Date endDate){
         return countValuesDuringTerm(startDate, endDate, walkingInMinutesHistory);
+    }
+
+    public int countStepsMedian(Date startDate, Date endDate){
+        return countMedian(startDate, endDate, stepsHistory);
+    }
+
+    public int countCaloriesMedian(Date startDate, Date endDate) {
+        return countMedian(startDate, endDate, caloriesHistory);
+    }
+
+    public int countWaterVolumeMedian(Date startDate, Date endDate){
+        return countMedian(startDate, endDate, waterVolumeHistory);
+    }
+
+    public int countWalkingTimeMedian(Date startDate, Date endDate){
+        return countMedian(startDate, endDate, walkingInMinutesHistory);
     }
 
     private int countValuesDuringTerm(Date startDate, Date endDate, Map<Date, Integer> values){
@@ -50,5 +64,19 @@ public class HealthHistory {
             }
         }
         return calories;
+    }
+
+    private int countMedian(Date startDate, Date endDate, Map<Date, Integer> values){
+        List<Integer> valuesPerTime = new ArrayList<Integer>();
+        for (Date date : values.keySet()) {
+            if(date.after(startDate) && date.before(endDate)){
+                valuesPerTime.add(values.get(date));
+            }
+        }
+        Collections.sort(valuesPerTime);
+        if (valuesPerTime.size() % 2 == 0){
+            return (valuesPerTime.get(valuesPerTime.size() / 2) + valuesPerTime.get(valuesPerTime.size() / 2 - 1)) / 2;
+        }
+        return valuesPerTime.get(valuesPerTime.size() / 2);
     }
 }
