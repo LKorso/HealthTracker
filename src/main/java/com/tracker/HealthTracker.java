@@ -1,67 +1,67 @@
 package com.tracker;
 
 public class HealthTracker {
-    private static final int DEFAULT_CALORIES = 2000;
-    private static final int DEFAULT_WATER_VOLUME = 2000;
-    private static final int DEFAULT_WALKING_TIME = 2000;
-    private static final int DEFAULT_STEPS = 2000;
+    private int defaultCaloriesNorm;
+    private int defaultWaterNorm;
+    private int defaultWalkingTimeNorm;
+    private int defaultStepsNorm;
     private int calories;
     private int waterVolume;
     private int walkingTime;
     private int steps;
 
     public HealthTracker(){
-        calories = DEFAULT_CALORIES;
-        waterVolume = DEFAULT_WATER_VOLUME;
-        walkingTime = DEFAULT_WALKING_TIME;
-        steps = DEFAULT_STEPS;
+        defaultCaloriesNorm = 2000;
+        defaultWaterNorm = 2000;
+        defaultWalkingTimeNorm = 2000;
+        defaultStepsNorm = 2000;
     }
 
     public int leftToEat(){
-        return calories;
+        return defaultCaloriesNorm - calories;
     }
 
     public int leftToDrink(){
-        return waterVolume;
+        return defaultWaterNorm - waterVolume;
     }
 
     public int leftToWalkTime(){
-        return walkingTime;
+        return defaultWalkingTimeNorm - walkingTime;
     }
 
     public int leftToWalkSteps(){
-        return steps;
+        return defaultStepsNorm - steps;
     }
 
     public void eat(int givenCalories){
-        calories -= givenCalories;
+        calories += givenCalories;
     }
 
     public void drink(int givenVolume) {
-        waterVolume -= givenVolume;
+        waterVolume += givenVolume;
     }
 
     public void walkInSteps(int givenSteps) {
-        steps -= givenSteps;
+        steps += givenSteps;
     }
 
     public void walkInTime(int givenMinutes) {
-        walkingTime -= givenMinutes;
+        walkingTime += givenMinutes;
     }
 
     public void changeDailyCalorieNorm(int newCalorieNorm) {
-        calories = newCalorieNorm;
+        defaultCaloriesNorm = newCalorieNorm;
     }
 
     public void changeDailyWaterNorm(int newWaterNorm) {
-        waterVolume = newWaterNorm;
+        defaultWaterNorm = newWaterNorm;
     }
 
     public void changeDailyStepsNorm(int newStepsNorm) {
-        steps = newStepsNorm;
+        defaultStepsNorm = newStepsNorm;
     }
 
     public void changeDailyMinutesNorm(int newMinutesNorm) {
-        walkingTime = newMinutesNorm;
+        defaultWalkingTimeNorm = newMinutesNorm;
     }
 }

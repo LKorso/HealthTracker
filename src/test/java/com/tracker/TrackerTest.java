@@ -60,4 +60,6 @@ public class TrackerTest {
         instance.changeDailyMinutesNorm(1000);
         assertEquals(1000, instance.leftToWalkTime());
     }
+
+
 }
